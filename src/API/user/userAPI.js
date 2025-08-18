@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const registerAPI = async (userData) => {
-    const response = await axios.post('/api/register', {
+    const response = await axios.post('https://gemai-server.onrender.com/api/register', {
         username: userData?.username,
         email: userData?.email,
         password: userData?.password,
@@ -13,7 +13,7 @@ export const registerAPI = async (userData) => {
 };
 
 export const loginAPI = async (userData) => {
-    const response = await axios.post('/api/login', {
+    const response = await axios.post('https://gemai-server.onrender.com/api/login', {
         email: userData?.email,
         password: userData?.password,
     }, {
@@ -24,7 +24,7 @@ export const loginAPI = async (userData) => {
 };
 
 export const checkAuthAPI = async () => {
-    const response = await axios.get('/api/check-auth', {
+    const response = await axios.get('https://gemai-server.onrender.com/api/check-auth', {
         withCredentials: true
     });
 
@@ -32,7 +32,7 @@ export const checkAuthAPI = async () => {
 };
 
 export const logoutAPI = async () => {
-    const response = await axios.post('/api/logout', {}, {
+    const response = await axios.post('https://gemai-server.onrender.com/api/logout', {}, {
         withCredentials: true
     });
 
@@ -40,7 +40,7 @@ export const logoutAPI = async () => {
 };
 
 export const userProfileAPI = async () => {
-    const response = await axios.get('/api/profile', {
+    const response = await axios.get('https://gemai-server.onrender.com/api/profile', {
         withCredentials: true
     });
 
@@ -48,7 +48,7 @@ export const userProfileAPI = async () => {
 };
 
 export const googleLoginAPI = async (idToken) => {
-    const response = await axios.post('/api/google-login',
+    const response = await axios.post('https://gemai-server.onrender.com/api/google-login',
         { idToken }, {
         withCredentials: true
     });

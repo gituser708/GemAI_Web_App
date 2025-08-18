@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const handleFreeSubscriptionAPI = async () => {
-    const response = await axios.post('/api/free-plan', {}, {
+    const response = await axios.post('https://gemai-server.onrender.com/api/free-plan', {}, {
         withCredentials: true
     });
 
@@ -9,7 +9,7 @@ export const handleFreeSubscriptionAPI = async () => {
 };
 
 export const handlePaymentIntentAPI = async (payment) => {
-    const response = await axios.post('/api/payment-checkout', {
+    const response = await axios.post('https://gemai-server.onrender.com/api/payment-checkout', {
         amount: Number(payment?.amount),
         subscriptionPlan: payment?.plan
     }, {
@@ -20,7 +20,7 @@ export const handlePaymentIntentAPI = async (payment) => {
 };
 
 export const verifyPaymentAPI = async (paymentId) => {
-    const response = await axios.post(`/api/verify-payment/${paymentId}`, {}, {
+    const response = await axios.post(`https://gemai-server.onrender.com/api/verify-payment/${paymentId}`, {}, {
         withCredentials: true
     });
 
