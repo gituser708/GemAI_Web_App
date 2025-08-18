@@ -69,19 +69,15 @@ const AIAssistant = () => {
           </p>
         )}
 
-        {/* Static display for Plan and Credits */}
-        <div className="flex justify-center">
-          <div className="m-5">
-            <span className="text-sm font-semibold bg-green-200 text-gray-900 px-4 py-2 rounded-full">
-              Plan: {data?.user?.subscriptionPlan}
-            </span>
-          </div>
-          <div className="m-5">
-            <span className="text-sm font-semibold bg-green-200 text-gray-900 px-4 py-2 rounded-full">
-              Credit: {data?.user?.apiRequestCount} / {data?.user?.monthlyRequestCount}
-            </span>
-          </div>
-        </div>
+        <div className="flex flex-wrap justify-center gap-4">
+        <span className="text-sm font-semibold bg-green-200 text-gray-900 px-3 py-1 rounded-full">
+          Plan: {data?.user?.subscriptionPlan}
+        </span>
+        <span className="text-sm font-semibold bg-green-200 text-gray-900 px-3 py-1 rounded-full">
+          Credit: {data?.user?.apiRequestCount} / {data?.user?.monthlyRequestCount}
+        </span>
+      </div>
+
 
         <form
           onSubmit={formik.handleSubmit} className="space-y-4">
