@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZfpNRfSxj9ea-6U6oe_nosmxzvOfoqaM",
+  apiKey: "AIzaSyAom6uizpTGh6imYru-ur0alZ8tJS_VbLI",
   authDomain: "gemai-project-83ebe8.firebaseapp.com",
   projectId: "gemai-project-83ebe8",
   storageBucket: "gemai-project-83ebe8.appspot.com",
