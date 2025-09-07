@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../config/firebase";
 
-//^ Sign out user
+// 🔹 Sign out user
 export const logoutUser = async () => {
   try {
     await signOut(auth);
@@ -18,36 +18,42 @@ export const logoutUser = async () => {
   }
 };
 
-//^ Auth state observer
+// 🔹 Auth state observer
 export const subscribeToAuthChanges = (callback) => {
   return onAuthStateChanged(auth, (user) => {
     callback(user);
   });
 };
 
-//^ Add Google Sign In (Popup + Redirect fallback)
+// 🔹 Google Sign-In with popup → redirect fallback
 export const signInWithGoogle = async () => {
-  try {
-    const provider = new GoogleAuthProvider();
+  const provider = new GoogleAuthProvider();
 
-    // 🔹 Try popup first
+  try {
     const userCredential = await signInWithPopup(auth, provider);
     return { user: userCredential.user, error: null };
   } catch (popupError) {
     console.warn("Popup failed, falling back to redirect:", popupError.message);
 
     try {
-      const provider = new GoogleAuthProvider();
       await signInWithRedirect(auth, provider);
-
-      // After redirect, Firebase restores the user automatically
-      const result = await getRedirectResult(auth);
-      if (result?.user) {
-        return { user: result.user, error: null };
-      }
+      // Redirect will navigate away; result handled separately
       return { user: null, error: null };
     } catch (redirectError) {
       return { user: null, error: redirectError.message };
     }
+  }
+};
+
+// 🔹 Handle redirect result (call on page load)
+export const handleRedirectResult = async () => {
+  try {
+    const result = await getRedirectResult(auth);
+    if (result?.user) {
+      return { user: result.user, error: null };
+    }
+    return { user: null, error: null };
+  } catch (error) {
+    return { user: null, error: error.message };
   }
 };
