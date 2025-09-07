@@ -3,12 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDWlQ5YA_tNZm6mcmZ7o5SLZGmcjQexcoI",
-  authDomain: "ai-content-generator-449f4.firebaseapp.com",
-  projectId: "ai-content-generator-449f4",
-  storageBucket: "ai-content-generator-449f4.firebasestorage.app",
-  messagingSenderId: "485650436246",
-  appId: "1:485650436246:web:2540c3c1000f0c857372b7"
+    apiKey: "AIzaSyBMwCwi0tJ5iq4EGwHkoa9uYMWCc5urPoY",
+    authDomain: "gemai-project-3bbe8.firebaseapp.com",
+    projectId: "gemai-project-3bbe8",
+    storageBucket: "gemai-project-3bbe8.firebasestorage.app",
+    messagingSenderId: "859213360282",
+    appId: "1:859213360282:web:8360dc6bedf6a123b84323",
+    measurementId: "G-C1YHE80GL8"
 };
 
 
