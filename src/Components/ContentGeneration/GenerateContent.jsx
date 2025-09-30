@@ -54,7 +54,7 @@ const AIAssistant = () => {
         </h2>
 
               {mutation.isPending && (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-7 mb-7">
           <div className="flex items-center gap-x-3 animate-bounce text-gray-700 font-semibold text-2xl">
             <RiGeminiFill size={25} color="red" />
             <span>Generating...</span>
