@@ -69,7 +69,7 @@ const AIAssistant = () => {
           </p>
         )}
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 mt-5 mb-5">
         <span className="text-sm font-semibold bg-green-200 text-gray-900 px-3 py-1 rounded-full">
           Plan: {data?.user?.subscriptionPlan}
         </span>
